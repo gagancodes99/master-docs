@@ -4,9 +4,27 @@ Welcome to your central documentation hub! This dashboard provides an overview o
 
 ## Projects Overview
 
+<!-- Auto-discovered projects will be added here by scripts/auto-discover-projects.js -->
+<!-- This table is automatically generated - do not edit manually -->
+
 | Project Name | Status | Overall Progress | Last Updated | Link |
 |-------------|--------|------------------|--------------|------|
-| Sample Project | In Progress | 45% | 2025-01-15 | [View Project](projects/sample-project) |
+| AtokPlanner | In Progress | 65% | 2025-01-15 | [View Project](projects/atok-planner) |
+| Banyan Wellness App | In Progress | 75% | 2025-01-15 | [View Project](projects/banyan) |
+| BigSports Gaming Zone CRM | In Progress | 80% | 2025-01-15 | [View Project](projects/bigsports) |
+| Bonderud Law Firm | In Progress | 85% | 2025-01-15 | [View Project](projects/bonderud) |
+| Event Sphere Solutions | In Progress | 70% | 2025-01-15 | [View Project](projects/event-sphere) |
+| Legal Assessment Tool | Planning | 15% | 2025-01-15 | [View Project](projects/legal-assessment) |
+| Mediterra - Virtual Business Card | In Progress | 80% | 2025-01-15 | [View Project](projects/mediterra) |
+| MotorsPost | In Progress | 60% | 2025-01-15 | [View Project](projects/motorspost) |
+| MY LIFE MY STORY | In Progress | 75% | 2025-01-15 | [View Project](projects/my-life-my-story) |
+| Nestingo - Property Management Platform | In Progress | 70% | 2025-01-15 | [View Project](projects/nestingo) |
+| PermitTrak | In Progress | 55% | 2025-01-15 | [View Project](projects/permittrak) |
+| PheonixPrime - Delivery & Logistics Platform | In Progress | 65% | 2025-01-15 | [View Project](projects/pheonixprime) |
+| Portfolio Website (gagancodes99.github.io) | In Progress | 70% | 2025-01-15 | [View Project](projects/portfolio) |
+| Raichu - CRM Platform | In Progress | 80% | 2025-01-15 | [View Project](projects/raichu) |
+| Reelage - Social Media Application | In Progress | 75% | 2025-01-15 | [View Project](projects/reelage) |
+| Sample Project | In Progress | 45% | 2024-01-15 | [View Project](projects/sample-project) |
 
 ## Status Legend
 

@@ -117,17 +117,35 @@ npm run build
 ### Deployment
 See [TEMPLATE_README.md](TEMPLATE_README.md#deployment) for deployment options.
 
-## 🤖 AI-Assisted Documentation
+## 🤖 AI-Assisted Documentation (Auto-Discovery System)
 
-This template is designed to work with AI coding assistants like Cursor or Claude Code. You can:
+This template features **automatic project discovery**! Here's how it works:
 
-1. Clone the template
-2. Ask the AI: "Explore my projects folder and create documentation for all projects"
-3. The AI will automatically:
-   - List all projects
-   - Create documentation files using the template
-   - Add progress bars
-   - Update the dashboard and sidebar
+1. **Clone the template**
+   ```bash
+   git clone https://github.com/gagancodes99/master-docs.git
+   cd master-docs
+   npm install
+   ```
+
+2. **Ask AI to document your projects**
+   - Open Cursor or Claude Code
+   - Ask: "Explore my Desktop/Work folder and document all projects according to the template"
+   - AI creates documentation files in `docs/projects/`
+
+3. **Auto-discovery runs automatically**
+   - When you run `npm start`, the system automatically:
+     - Scans for all project files
+     - Updates the sidebar
+     - Updates the dashboard
+     - Extracts project info (name, status, progress)
+
+4. **No manual configuration needed!**
+   - Projects appear automatically
+   - Sidebar updates automatically
+   - Dashboard updates automatically
+
+**See [QUICK_START_WORKFLOW.md](docs/QUICK_START_WORKFLOW.md) for detailed instructions.**
 
 ## 📋 What's Included
 
