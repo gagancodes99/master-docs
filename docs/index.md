@@ -6,21 +6,7 @@ Welcome to your central documentation hub! This dashboard provides an overview o
 
 | Project Name | Status | Overall Progress | Last Updated | Link |
 |-------------|--------|------------------|--------------|------|
-| Raichu CRM | In Progress | 80% | 2025-01-15 | [View Project](projects/raichu) |
-| Bonderud Law Firm | In Progress | 85% | 2025-01-15 | [View Project](projects/bonderud) |
-| Mediterra | In Progress | 80% | 2025-01-15 | [View Project](projects/mediterra) |
-| BigSports CRM | In Progress | 80% | 2025-01-15 | [View Project](projects/bigsports) |
-| Reelage | In Progress | 75% | 2025-01-15 | [View Project](projects/reelage) |
-| MY LIFE MY STORY | In Progress | 75% | 2025-01-15 | [View Project](projects/my-life-my-story) |
-| Banyan Wellness | In Progress | 75% | 2025-01-15 | [View Project](projects/banyan) |
-| Nestingo | In Progress | 70% | 2025-01-15 | [View Project](projects/nestingo) |
-| Event Sphere Solutions | In Progress | 70% | 2025-01-15 | [View Project](projects/event-sphere) |
-| Portfolio Website | In Progress | 70% | 2025-01-15 | [View Project](projects/portfolio) |
-| PheonixPrime | In Progress | 65% | 2025-01-15 | [View Project](projects/pheonixprime) |
-| AtokPlanner | In Progress | 65% | 2025-01-15 | [View Project](projects/atok-planner) |
-| PermitTrak | In Progress | 55% | 2025-01-15 | [View Project](projects/permittrak) |
-| MotorsPost | In Progress | 60% | 2025-01-15 | [View Project](projects/motorspost) |
-| Legal Assessment Tool | Planning | 15% | 2025-01-15 | [View Project](projects/legal-assessment) |
+| Sample Project | In Progress | 45% | 2025-01-15 | [View Project](projects/sample-project) |
 
 ## Status Legend
 
