@@ -1,0 +1,32 @@
+{
+  "templateName": "Master Documentation Template",
+  "version": "1.0.0",
+  "description": "A comprehensive Docusaurus-based documentation template for tracking multiple projects",
+  "author": "Your Team",
+  "features": [
+    "Project dashboard with overview",
+    "Visual progress bars",
+    "Milestone tracking",
+    "Search functionality",
+    "Dark mode support",
+    "Responsive design"
+  ],
+  "requirements": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "setupSteps": [
+    "1. Run: npm install",
+    "2. Run: npm start",
+    "3. Customize docusaurus.config.js",
+    "4. Add your projects using the template",
+    "5. Update sidebar and dashboard"
+  ],
+  "documentationFiles": [
+    "TEMPLATE_README.md",
+    "CONTRIBUTING.md",
+    "SETUP_GUIDE.md",
+    "README.md"
+  ]
+}
+
