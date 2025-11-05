@@ -16,6 +16,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "discover": "node scripts/auto-discover-projects.js",
+    "discover:folders": "node scripts/discover-projects-from-folders.js",
+    "discover:all": "node scripts/discover-projects-from-folders.js && node scripts/auto-discover-projects.js",
     "sync-api": "node scripts/create-sync-endpoint.js"
   },
   "dependencies": {

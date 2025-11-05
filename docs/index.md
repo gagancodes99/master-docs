@@ -13,22 +13,50 @@ Welcome to your central documentation hub! This dashboard provides an overview o
 
 | Project Name | Status | Overall Progress | Last Updated | Link |
 |-------------|--------|------------------|--------------|------|
-| AtokPlanner | In Progress | 65% | 2025-01-15 | [View Project](projects/atok-planner) |
+| 1. Create a project spec | In Progress | 0% | 2025-07-14 | [View Project](projects/create-a-project-spec) |
+| atok-planner | In Progress | 0% | 2025-11-04 | [View Project](projects/atok-planner) |
 | Banyan Wellness App | In Progress | 75% | 2025-01-15 | [View Project](projects/banyan) |
+| banyan-wellness-app | In Progress | 0% | 2025-08-06 | [View Project](projects/banyan-wellness-app) |
+| big-sports-backend | In Progress | 0% | 2025-08-06 | [View Project](projects/big-sports-backend) |
 | BigSports Gaming Zone CRM | In Progress | 80% | 2025-01-15 | [View Project](projects/bigsports) |
+| bigsports-nfc-server | In Progress | 0% | 2025-07-29 | [View Project](projects/bigsports-nfc-server) |
 | Bonderud Law Firm | In Progress | 85% | 2025-01-15 | [View Project](projects/bonderud) |
+| bounderulaw-api | In Progress | 0% | 2025-07-07 | [View Project](projects/bounderulaw-api) |
+| easteats | In Progress | 0% | 2025-07-07 | [View Project](projects/easteats) |
 | Event Sphere Solutions | In Progress | 70% | 2025-01-15 | [View Project](projects/event-sphere) |
+| event-sphere-solutions | In Progress | 0% | 2025-09-26 | [View Project](projects/event-sphere-solutions) |
+| eventsphere-redesign | In Progress | 0% | 2025-09-25 | [View Project](projects/eventsphere-redesign) |
+| free-nextjs-admin-dashboard | In Progress | 0% | 2025-03-18 | [View Project](projects/free-nextjs-admin-dashboard) |
+| frontend | In Progress | 0% | 2025-09-17 | [View Project](projects/frontend) |
 | Legal Assessment Tool | Planning | 15% | 2025-01-15 | [View Project](projects/legal-assessment) |
-| Mediterra - Virtual Business Card | In Progress | 80% | 2025-01-15 | [View Project](projects/mediterra) |
-| MotorsPost | In Progress | 60% | 2025-01-15 | [View Project](projects/motorspost) |
+| legal-assessment-nextjs | In Progress | 0% | 2025-09-18 | [View Project](projects/legal-assessment-nextjs) |
+| Mediterra | In Progress | 0% | 2025-11-04 | [View Project](projects/mediterra) |
+| MotorsPost | In Progress | 0% | 2025-10-24 | [View Project](projects/motorspost) |
 | MY LIFE MY STORY | In Progress | 75% | 2025-01-15 | [View Project](projects/my-life-my-story) |
+| my-app | In Progress | 0% | 2025-08-06 | [View Project](projects/my-app) |
+| my-turborepo | In Progress | 0% | 2025-03-13 | [View Project](projects/my-turborepo) |
+| mylifemyhappiness | In Progress | 0% | 2025-09-17 | [View Project](projects/mylifemyhappiness) |
+| MyPhotos | In Progress | 0% | 2025-10-14 | [View Project](projects/myphotos) |
+| n8n-auto-sync | In Progress | 0% | 2025-08-27 | [View Project](projects/n8n-auto-sync) |
 | Nestingo - Property Management Platform | In Progress | 70% | 2025-01-15 | [View Project](projects/nestingo) |
-| PermitTrak | In Progress | 55% | 2025-01-15 | [View Project](projects/permittrak) |
+| permittrak | In Progress | 0% | 2025-10-24 | [View Project](projects/permittrak) |
+| pg-management | In Progress | 0% | 2025-07-29 | [View Project](projects/pg-management) |
 | PheonixPrime - Delivery & Logistics Platform | In Progress | 65% | 2025-01-15 | [View Project](projects/pheonixprime) |
+| phoenix-fleet-admin | In Progress | 0% | 2025-08-14 | [View Project](projects/phoenix-fleet-admin) |
+| phoenixprime-driver-app | In Progress | 0% | 2025-08-22 | [View Project](projects/phoenixprime-driver-app) |
+| photonest | In Progress | 0% | 2025-08-20 | [View Project](projects/photonest) |
 | Portfolio Website (gagancodes99.github.io) | In Progress | 70% | 2025-01-15 | [View Project](projects/portfolio) |
 | Raichu - CRM Platform | In Progress | 80% | 2025-01-15 | [View Project](projects/raichu) |
-| Reelage - Social Media Application | In Progress | 75% | 2025-01-15 | [View Project](projects/reelage) |
+| raichu-crm | In Progress | 0% | 2025-10-27 | [View Project](projects/raichu-crm) |
+| reelage | In Progress | 0% | 2025-11-03 | [View Project](projects/reelage) |
+| reelage_website | In Progress | 0% | 2025-09-25 | [View Project](projects/reelage-website) |
+| reelage-api-gateway | In Progress | 0% | 2025-10-13 | [View Project](projects/reelage-api-gateway) |
+| reelage-b2b-event-management | In Progress | 0% | 2025-10-14 | [View Project](projects/reelage-b2b-event-management) |
+| s-photonest | In Progress | 0% | 2025-08-18 | [View Project](projects/s-photonest) |
 | Sample Project | In Progress | 45% | 2024-01-15 | [View Project](projects/sample-project) |
+| shipper_mobile | In Progress | 0% | 2025-07-15 | [View Project](projects/shipper-mobile) |
+| tenant-frontend | In Progress | 0% | 2025-07-29 | [View Project](projects/tenant-frontend) |
+| web | In Progress | 0% | 2025-07-15 | [View Project](projects/web) |
 
 ## Status Legend
 

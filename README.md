@@ -34,9 +34,11 @@ A comprehensive Docusaurus-based documentation template for tracking multiple pr
 
 ## ✨ Features
 
+- **Multi-Folder Project Discovery**: Automatically scan multiple source directories (Desktop/Work, Desktop/Personal, etc.) and discover projects
 - **Dashboard Overview**: Visual dashboard showing all projects with status and progress
 - **Progress Tracking**: Visual progress bars for milestones and overall project completion
 - **Project Documentation**: Structured format for documenting each project
+- **Auto-Discovery**: Automatically detect projects from package.json, git repos, and other indicators
 - **Search Functionality**: Built-in search across all documentation
 - **Dark Mode**: Automatic dark mode support
 - **Responsive Design**: Works on all devices
@@ -119,7 +121,27 @@ See [TEMPLATE_README.md](TEMPLATE_README.md#deployment) for deployment options.
 
 ## 🤖 AI-Assisted Documentation (Auto-Discovery System)
 
-This template features **automatic project discovery**! Here's how it works:
+This template features **automatic project discovery** with **multi-folder scanning**! Here's how it works:
+
+### Method 1: Multi-Folder Discovery (Recommended)
+
+1. **Configure source folders**
+   - Edit `project-discovery.config.json`
+   - Add folders to scan: `["~/Desktop/Work", "~/Desktop/Personal", "~/Documents/Projects"]`
+   - The system will automatically detect projects in these folders
+
+2. **Run discovery**
+   ```bash
+   npm run discover:folders  # Discover projects from configured folders
+   npm start                 # Start the dev server
+   ```
+
+3. **Projects are automatically:**
+   - Discovered from source folders
+   - Documentation files created/updated
+   - Added to sidebar and dashboard
+
+### Method 2: AI-Assisted Manual Documentation
 
 1. **Clone the template**
    ```bash
@@ -135,6 +157,7 @@ This template features **automatic project discovery**! Here's how it works:
 
 3. **Auto-discovery runs automatically**
    - When you run `npm start`, the system automatically:
+     - Runs multi-folder discovery (if configured)
      - Scans for all project files
      - Updates the sidebar
      - Updates the dashboard

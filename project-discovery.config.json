@@ -1,0 +1,30 @@
+{
+  "sourceFolders": [
+    "~/Desktop/Work"
+  ],
+  "excludePatterns": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build",
+    ".next",
+    ".docusaurus",
+    "coverage",
+    ".DS_Store",
+    "MasterDocs"
+  ],
+  "projectIndicators": [
+    "package.json",
+    "requirements.txt",
+    "pom.xml",
+    "Cargo.toml",
+    ".git"
+  ],
+  "autoCreateDocs": true,
+  "defaultStatus": "In Progress",
+  "defaultProgress": 0,
+  "outputDir": "docs/projects",
+  "minDepth": 1,
+  "maxDepth": 3
+}
+

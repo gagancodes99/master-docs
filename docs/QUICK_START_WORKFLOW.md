@@ -1,8 +1,18 @@
 # Quick Start Workflow
 
-This guide explains how to use the auto-discovery system to document your projects.
+This guide explains how to use the auto-discovery system to document your projects, including the new **multi-folder discovery** feature.
 
 ## 🚀 Workflow Overview
+
+### Option A: Multi-Folder Discovery (Recommended)
+
+1. **Clone the repository**
+2. **Install dependencies**
+3. **Configure source folders** in `project-discovery.config.json`
+4. **Run discovery** - projects automatically discovered and documented!
+5. **Start dev server** - projects appear automatically!
+
+### Option B: AI-Assisted Manual Documentation
 
 1. **Clone the repository**
 2. **Install dependencies**
@@ -11,7 +21,9 @@ This guide explains how to use the auto-discovery system to document your projec
 
 ## Step-by-Step Guide
 
-### 1. Clone and Setup
+### Option A: Multi-Folder Discovery
+
+#### 1. Clone and Setup
 
 ```bash
 git clone https://github.com/gagancodes99/master-docs.git
@@ -19,7 +31,76 @@ cd master-docs
 npm install
 ```
 
-### 2. Ask AI to Document Your Projects
+#### 2. Configure Source Folders
+
+Edit `project-discovery.config.json`:
+
+```json
+{
+  "sourceFolders": [
+    "~/Desktop/Work",
+    "~/Desktop/Personal",
+    "~/Documents/Projects"
+  ],
+  "excludePatterns": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build"
+  ],
+  "projectIndicators": [
+    "package.json",
+    "requirements.txt",
+    "pom.xml",
+    "Cargo.toml",
+    ".git"
+  ],
+  "autoCreateDocs": true,
+  "defaultStatus": "In Progress",
+  "defaultProgress": 0,
+  "minDepth": 1,
+  "maxDepth": 3
+}
+```
+
+**Configuration Options:**
+- `sourceFolders`: Array of folders to scan (supports `~` for home directory)
+- `excludePatterns`: Folders/files to skip (e.g., `node_modules`, `.git`)
+- `projectIndicators`: Files that indicate a project (e.g., `package.json`, `.git`)
+- `autoCreateDocs`: Automatically create documentation files (true/false)
+- `minDepth`/`maxDepth`: Control how deep to scan (1-3 recommended)
+
+#### 3. Run Discovery
+
+```bash
+npm run discover:folders
+```
+
+This will:
+- ✅ Scan all configured source folders
+- ✅ Detect projects (Node.js, Python, Java, Rust, Git repos, etc.)
+- ✅ Extract project metadata (name, description, technologies, repository)
+- ✅ Create/update documentation files in `docs/projects/`
+
+#### 4. Start Development Server
+
+```bash
+npm start
+```
+
+Projects automatically appear in sidebar and dashboard!
+
+### Option B: AI-Assisted Manual Documentation
+
+#### 1. Clone and Setup
+
+```bash
+git clone https://github.com/gagancodes99/master-docs.git
+cd master-docs
+npm install
+```
+
+#### 2. Ask AI to Document Your Projects
 
 Open Cursor or Claude Code and ask:
 
@@ -35,9 +116,10 @@ The AI will:
 - ✅ Add progress bars and milestones
 - ✅ Follow the template rules
 
-### 3. Auto-Discovery Runs Automatically
+#### 3. Auto-Discovery Runs Automatically
 
 When you run `npm start` or `npm run build`, the auto-discovery script will:
+- ✅ Run multi-folder discovery first (if configured)
 - ✅ Scan `docs/projects/` directory
 - ✅ Automatically add all projects to the sidebar
 - ✅ Update the dashboard with all projects
@@ -71,30 +153,59 @@ npm start         # In another terminal (runs Docusaurus)
 
 Or simply click the button - it will refresh the page and auto-discovery runs on page load anyway!
 
+## Available Discovery Commands
+
+```bash
+# Discover projects from configured folders and create docs
+npm run discover:folders
+
+# Update sidebar/dashboard from existing docs
+npm run discover
+
+# Run folder discovery + update sidebar/dashboard
+npm run discover:all
+
+# Start dev server (runs discovery automatically)
+npm start
+```
+
 ## Manual Discovery (Optional)
 
 If you want to manually trigger discovery from the command line:
 
 ```bash
-npm run discover
-```
+# Discover from folders
+npm run discover:folders
 
-This will update the sidebar and dashboard without starting the server.
+# Update sidebar/dashboard only
+npm run discover
+
+# Both in sequence
+npm run discover:all
+```
 
 ## How It Works
 
-1. **Auto-Discovery Script** (`scripts/auto-discover-projects.js`):
+1. **Multi-Folder Discovery** (`scripts/discover-projects-from-folders.js`):
+   - Reads configuration from `project-discovery.config.json`
+   - Scans all configured source folders recursively
+   - Detects projects using indicators (package.json, .git, etc.)
+   - Extracts metadata (name, description, technologies, repository)
+   - Creates/updates documentation files in `docs/projects/`
+
+2. **Auto-Discovery Script** (`scripts/auto-discover-projects.js`):
+   - Runs multi-folder discovery first (if configured)
    - Scans `docs/projects/*.md` files
    - Excludes `project-template.md` (always)
    - Updates `sidebars.js` automatically
    - Updates `docs/index.md` dashboard table
 
-2. **Pre-Start Hook**:
+3. **Pre-Start Hook**:
    - Runs automatically before `npm start`
    - Runs automatically before `npm run build`
    - Ensures sidebar/dashboard are always up-to-date
 
-3. **Git Protection**:
+4. **Git Protection**:
    - `.gitignore` excludes all project files except template/sample
    - Your projects stay local-only
    - Never committed to the repository
