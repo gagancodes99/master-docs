@@ -56,9 +56,24 @@ Open `http://localhost:3000` and you'll see:
 - All projects on the dashboard
 - Progress bars and milestones
 
+## Sync Button
+
+There's a **"Sync Projects"** button on the dashboard that allows you to:
+- Manually trigger project discovery
+- Refresh the sidebar and dashboard
+- Works even if you've added new projects
+
+**Note**: For the sync button to work with API calls, start the dev server with:
+```bash
+npm run sync-api  # In one terminal (runs the sync API server)
+npm start         # In another terminal (runs Docusaurus)
+```
+
+Or simply click the button - it will refresh the page and auto-discovery runs on page load anyway!
+
 ## Manual Discovery (Optional)
 
-If you want to manually trigger discovery:
+If you want to manually trigger discovery from the command line:
 
 ```bash
 npm run discover

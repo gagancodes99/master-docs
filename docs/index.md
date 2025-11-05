@@ -1,6 +1,10 @@
+import SyncProjectsButton from '@site/src/components/SyncProjectsButton';
+
 # Master Documentation Dashboard
 
 Welcome to your central documentation hub! This dashboard provides an overview of all your projects and their current status.
+
+<SyncProjectsButton />
 
 ## Projects Overview
 
