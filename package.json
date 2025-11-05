@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "prestart": "node scripts/auto-discover-projects.js",
-    "prebuild": "node scripts/auto-discover-projects.js",
+    "preinstall": "node scripts/verify-installation.js || true",
+    "prestart": "node scripts/verify-installation.js && node scripts/auto-discover-projects.js || true",
+    "prebuild": "node scripts/verify-installation.js && node scripts/auto-discover-projects.js || true",
+    "verify": "node scripts/verify-installation.js",
+    "fix-install": "node scripts/verify-installation.js",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:with-sync": "node scripts/create-sync-endpoint.js & docusaurus start",

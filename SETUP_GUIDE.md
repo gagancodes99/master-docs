@@ -38,6 +38,54 @@ npm install
 
 This will install all required packages. It may take a few minutes.
 
+**Automatic Fix:** If you encounter any issues, the verification script will automatically detect and fix them. It runs automatically before `npm start`, but you can also run it manually:
+
+```bash
+npm run verify
+# or
+npm run fix-install
+```
+
+### Troubleshooting Installation Issues
+
+**First, try the automatic fix:**
+```bash
+npm run fix-install
+```
+
+If the automatic fix doesn't work, try these manual steps:
+
+1. **Delete existing node_modules and lock file:**
+   ```bash
+   # On Windows (PowerShell)
+   Remove-Item -Recurse -Force node_modules
+   Remove-Item -Force package-lock.json
+   
+   # On Mac/Linux
+   rm -rf node_modules
+   rm -f package-lock.json
+   ```
+
+2. **Clear npm cache:**
+   ```bash
+   npm cache clean --force
+   ```
+
+3. **Reinstall dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Windows-specific issues:**
+   - Avoid spaces in folder paths (e.g., use `master-docs` instead of `master docs`)
+   - Run terminal as Administrator if you encounter permission errors
+   - Ensure Node.js version is 18.0 or higher: `node --version`
+
+5. **If you see "Cannot find package" errors:**
+   - Make sure you're in the correct directory
+   - Verify `package.json` exists
+   - Try `npm install --legacy-peer-deps` if peer dependency warnings occur
+
 ## Step 3: Start Development Server
 
 ```bash
