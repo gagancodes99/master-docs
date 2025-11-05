@@ -13,7 +13,7 @@ export default function SyncProjectsButton() {
     
     try {
       // Try to call the sync API endpoint if available
-      const response = await fetch('http://localhost:3001/api/sync-projects', {
+      const response = await fetch('http://localhost:3069/api/sync-projects', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

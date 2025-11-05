@@ -9,7 +9,7 @@ const http = require('http');
 const { exec } = require('child_process');
 const path = require('path');
 
-const PORT = 3001;
+const PORT = 3069;
 
 const server = http.createServer((req, res) => {
   // Enable CORS
