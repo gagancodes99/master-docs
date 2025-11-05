@@ -14,7 +14,7 @@ Welcome to your central documentation hub! This dashboard provides an overview o
 | Project Name | Status | Overall Progress | Last Updated | Link |
 |-------------|--------|------------------|--------------|------|
 | 1. Create a project spec | In Progress | 0% | 2025-07-14 | [View Project](projects/create-a-project-spec) |
-| atok-planner | In Progress | 0% | 2025-11-04 | [View Project](projects/atok-planner) |
+| atok-planner | ⏳ Not Started | **Progress**: 10% | **Weight**: 25% of overall | 235% | 2025-11-05 | [View Project](projects/atok-planner) |
 | Banyan Wellness App | In Progress | 75% | 2025-01-15 | [View Project](projects/banyan) |
 | banyan-wellness-app | In Progress | 0% | 2025-08-06 | [View Project](projects/banyan-wellness-app) |
 | big-sports-backend | In Progress | 0% | 2025-08-06 | [View Project](projects/big-sports-backend) |

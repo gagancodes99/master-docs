@@ -51,12 +51,62 @@ Summary of where the project currently stands. What's been accomplished? What's 
 
 **Status Options**: Not Started | In Progress | Completed
 
+### Progress Breakdown by Tasks
+
+This section shows the detailed breakdown of tasks within each milestone and their contribution to overall progress.
+
+#### Milestone 1: [Milestone Name]
+**Status**: Not Started | **Progress**: 0% | **Weight**: 33.3% of overall
+
+| Task | Status | Progress | Notes |
+|------|--------|----------|-------|
+| Task 1 description | Not Started | 0% | Task details |
+| Task 2 description | Not Started | 0% | Task details |
+| Task 3 description | Not Started | 0% | Task details |
+
+**Milestone Calculation**: (0% + 0% + 0%) / 3 = 0%
+
+#### Milestone 2: [Milestone Name]
+**Status**: In Progress | **Progress**: 30% | **Weight**: 33.3% of overall
+
+| Task | Status | Progress | Notes |
+|------|--------|----------|-------|
+| Task 1 description | Completed | 100% | Task completed |
+| Task 2 description | In Progress | 25% | Currently working on this |
+| Task 3 description | Not Started | 0% | Task not started yet |
+
+**Milestone Calculation**: (100% + 25% + 0%) / 3 = 41.67% → **30%** (rounded)
+
+#### Milestone 3: [Milestone Name]
+**Status**: Not Started | **Progress**: 0% | **Weight**: 33.3% of overall
+
+| Task | Status | Progress | Notes |
+|------|--------|----------|-------|
+| Task 1 description | Not Started | 0% | Task details |
+| Task 2 description | Not Started | 0% | Task details |
+
+**Milestone Calculation**: (0% + 0%) / 2 = 0%
+
+### Overall Progress Calculation
+
+**Overall Progress Breakdown:**
+- Milestone 1: 0% × 33.3% = 0.0%
+- Milestone 2: 30% × 33.3% = 10.0%
+- Milestone 3: 0% × 33.3% = 0.0%
+- **Total**: 0.0% + 10.0% + 0.0% = **10%** (rounded to nearest 5%)
+
+**Simple Calculation:**
+- Sum of all milestone progress: 0% + 30% + 0% = 30%
+- Number of milestones: 3
+- Overall Progress: 30% ÷ 3 = **10%** (rounded to nearest 5%)
+
 ### Overall Progress Calculation
 
 To calculate overall progress:
 1. Add up all milestone progress percentages
 2. Divide by the number of milestones
-3. Example: (0% + 30% + 0%) / 3 = 10% overall
+3. Round to the nearest 5% for consistency
+4. Example: (0% + 30% + 0%) / 3 = 10% overall
 
 ## Resources & Links
 
