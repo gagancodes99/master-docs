@@ -185,6 +185,20 @@ This is expected! Personal projects are in `.gitignore` and won't be committed. 
    npm run discover:folders
    ```
 
+## React Warnings
+
+### Warning: LoadableComponent uses legacy contextTypes API
+
+**Symptoms:**
+```
+Warning: LoadableComponent uses the legacy contextTypes API which is no longer supported...
+```
+
+**Solution:**
+This is a **harmless warning** from Docusaurus's internal dependencies (`react-loadable`). It does not affect functionality and can be safely ignored. This warning will be resolved in future Docusaurus updates.
+
+**Note:** This is not an error - your site is working correctly. The warning appears in the browser console but doesn't impact the documentation site.
+
 ## Getting Help
 
 If you're still experiencing issues:
