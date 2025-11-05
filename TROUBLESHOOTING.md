@@ -2,6 +2,23 @@
 
 Common issues and solutions when setting up or running the Master Documentation project.
 
+## Automatic Fix
+
+**First, try the automatic fix:**
+```bash
+npm run verify
+# or
+npm run fix-install
+```
+
+This script will:
+- ✅ Detect your platform (Windows/Mac/Linux)
+- ✅ Check installation integrity
+- ✅ Automatically clean and reinstall if needed
+- ✅ Handle Windows-specific issues
+
+The script also runs automatically before `npm start` and `npm run build`.
+
 ## Installation Issues
 
 ### Error: Cannot find package '@docusaurus/logger'
@@ -11,7 +28,12 @@ Common issues and solutions when setting up or running the Master Documentation 
 Error: Cannot find package '...@docusaurus\logger\lib\index.js'
 ```
 
-**Solution:**
+**Automatic Solution:**
+```bash
+npm run fix-install
+```
+
+**Manual Solution (if automatic fix doesn't work):**
 1. Delete `node_modules` folder and `package-lock.json`:
    ```bash
    # Windows (PowerShell)

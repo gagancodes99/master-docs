@@ -38,9 +38,22 @@ npm install
 
 This will install all required packages. It may take a few minutes.
 
+**Automatic Fix:** If you encounter any issues, the verification script will automatically detect and fix them. It runs automatically before `npm start`, but you can also run it manually:
+
+```bash
+npm run verify
+# or
+npm run fix-install
+```
+
 ### Troubleshooting Installation Issues
 
-If you encounter errors during installation:
+**First, try the automatic fix:**
+```bash
+npm run fix-install
+```
+
+If the automatic fix doesn't work, try these manual steps:
 
 1. **Delete existing node_modules and lock file:**
    ```bash
