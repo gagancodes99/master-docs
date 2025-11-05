@@ -14,6 +14,11 @@ A comprehensive Docusaurus-based documentation template for tracking multiple pr
    ```bash
    npm install
    ```
+   
+   **Important:** Make sure `npm install` completes successfully. If you encounter errors:
+   - Delete `node_modules` folder and `package-lock.json` (if exists)
+   - Run `npm install` again
+   - On Windows, avoid spaces in the folder path (e.g., use `master-docs` instead of `master docs`)
 
 3. **Start development server:**
    ```bash

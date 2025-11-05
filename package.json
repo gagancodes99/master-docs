@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "prestart": "node scripts/auto-discover-projects.js",
-    "prebuild": "node scripts/auto-discover-projects.js",
+    "prestart": "node scripts/auto-discover-projects.js || true",
+    "prebuild": "node scripts/auto-discover-projects.js || true",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "start:with-sync": "node scripts/create-sync-endpoint.js & docusaurus start",
