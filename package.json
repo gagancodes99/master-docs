@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "node scripts/verify-installation.js || true",
-    "prestart": "node scripts/verify-installation.js && node scripts/auto-discover-projects.js || true",
-    "prebuild": "node scripts/verify-installation.js && node scripts/auto-discover-projects.js || true",
+    "preinstall": "node scripts/verify-installation.js || echo '⚠️  Verification skipped'",
+    "prestart": "node scripts/run-with-error-capture.js verify-installation.js || echo '⚠️  Verification failed, continuing...' && node scripts/run-with-error-capture.js auto-discover-projects.js || echo '⚠️  Auto-discovery failed, continuing...'",
+    "prebuild": "node scripts/run-with-error-capture.js verify-installation.js || echo '⚠️  Verification failed, continuing...' && node scripts/run-with-error-capture.js auto-discover-projects.js || echo '⚠️  Auto-discovery failed, continuing...'",
     "verify": "node scripts/verify-installation.js",
     "fix-install": "node scripts/verify-installation.js",
     "docusaurus": "docusaurus",
@@ -19,6 +19,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "discover": "node scripts/auto-discover-projects.js",
+    "discover:debug": "node scripts/debug-discovery.js",
     "sync-api": "node scripts/create-sync-endpoint.js"
   },
   "dependencies": {

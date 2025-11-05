@@ -118,6 +118,13 @@ For complete information, see:
 npm run build
 ```
 
+### Debugging Discovery Issues
+If you encounter errors that disappear too quickly:
+```bash
+npm run discover:debug
+```
+This will run discovery with verbose output and save logs to `discovery-debug.log`.
+
 ### Adding a Project
 1. Copy template: `cp docs/projects/project-template.md docs/projects/your-project.md`
 2. Fill in details

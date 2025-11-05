@@ -215,6 +215,27 @@ If you're still experiencing issues:
 
 ---
 
+### Errors disappear too quickly
+
+If errors flash by too fast to read:
+
+1. **Use debug mode:**
+   ```bash
+   npm run discover:debug
+   ```
+   This saves all output to `discovery-debug.log`
+
+2. **Check error logs:**
+   - `discovery-debug.log` - Full debug output
+   - `discovery-error.log` - Error details from auto-discovery
+   - `prestart-error.log` - Errors from prestart hooks
+
+3. **Run scripts individually:**
+   ```bash
+   npm run verify
+   npm run discover
+   ```
+
 **Quick Fix Checklist:**
 - [ ] Deleted `node_modules` and `package-lock.json`
 - [ ] Ran `npm cache clean --force`
@@ -223,4 +244,5 @@ If you're still experiencing issues:
 - [ ] Checked folder path (no spaces on Windows)
 - [ ] Cleared Docusaurus cache: `npm run clear`
 - [ ] Tried running `npm start` again
+- [ ] Checked error logs if errors disappear too fast
 

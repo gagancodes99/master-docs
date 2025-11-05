@@ -245,32 +245,65 @@ function updateDashboard(projectFiles) {
 
 // Main execution
 function main() {
-  console.log('🔍 Auto-discovering projects...');
-  
-  const projectFiles = getProjectFiles();
-  const fileList = projectFiles.map(p => p.filename).join(', ');
-  console.log(`📁 Found ${projectFiles.length} project(s):`, fileList);
-  
-  if (projectFiles.length === 0) {
-    console.log('ℹ️  No projects found. Use the template to create your first project.');
-    return;
+  try {
+    console.log('🔍 Auto-discovering projects...');
+    
+    const projectFiles = getProjectFiles();
+    const fileList = projectFiles.map(p => p.filename).join(', ');
+    console.log(`📁 Found ${projectFiles.length} project(s):`, fileList);
+    
+    if (projectFiles.length === 0) {
+      console.log('ℹ️  No projects found. Use the template to create your first project.');
+      return;
+    }
+    
+    // Update sidebar
+    if (updateSidebar(projectFiles)) {
+      console.log('✅ Sidebar updated');
+    } else {
+      console.error('❌ Failed to update sidebar');
+      process.exit(1);
+    }
+    
+    // Update dashboard
+    if (updateDashboard(projectFiles)) {
+      console.log('✅ Dashboard updated');
+    } else {
+      console.error('❌ Failed to update dashboard');
+      process.exit(1);
+    }
+    
+    console.log('✨ Auto-discovery complete!');
+  } catch (error) {
+    console.error('\n');
+    console.error('='.repeat(60));
+    console.error('❌ ERROR in auto-discovery script');
+    console.error('='.repeat(60));
+    console.error('Message:', error.message);
+    console.error('Stack:', error.stack);
+    console.error('='.repeat(60));
+    console.error('\n');
+    
+    // Write error to file for debugging
+    const fs = require('fs');
+    const path = require('path');
+    const errorLogPath = path.join(__dirname, '../discovery-error.log');
+    try {
+      fs.writeFileSync(errorLogPath, 
+        `Error at ${new Date().toISOString()}\n` +
+        `Message: ${error.message}\n` +
+        `Stack: ${error.stack}\n`
+      );
+      console.error(`📝 Error details saved to: ${errorLogPath}\n`);
+    } catch (writeError) {
+      // Ignore write errors
+    }
+    
+    // Add delay before exit to ensure error is visible
+    setTimeout(() => {
+      process.exit(1);
+    }, 2000);
   }
-  
-  // Update sidebar
-  if (updateSidebar(projectFiles)) {
-    console.log('✅ Sidebar updated');
-  } else {
-    console.error('❌ Failed to update sidebar');
-  }
-  
-  // Update dashboard
-  if (updateDashboard(projectFiles)) {
-    console.log('✅ Dashboard updated');
-  } else {
-    console.error('❌ Failed to update dashboard');
-  }
-  
-  console.log('✨ Auto-discovery complete!');
 }
 
 main();

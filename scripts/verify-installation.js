@@ -191,8 +191,21 @@ function verifyAndFix() {
 
 // Run if called directly
 if (require.main === module) {
-  const success = verifyAndFix();
-  process.exit(success ? 0 : 1);
+  try {
+    const success = verifyAndFix();
+    // Add a small delay to ensure output is visible
+    setTimeout(() => {
+      process.exit(success ? 0 : 1);
+    }, 100);
+  } catch (error) {
+    console.error('\n❌ ERROR in verification script:');
+    console.error('   Message:', error.message);
+    console.error('   Stack:', error.stack);
+    console.error('\n');
+    setTimeout(() => {
+      process.exit(1);
+    }, 2000);
+  }
 }
 
 module.exports = { verifyAndFix, checkNodeModules, checkPathForSpaces };
