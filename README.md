@@ -32,6 +32,7 @@ A comprehensive Docusaurus-based documentation template for tracking multiple pr
 
 - **[QUICK_START.md](QUICK_START.md)** - Get started in 5 minutes! ⚡
 - **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Step-by-step setup for new users
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Common issues and solutions 🔧
 - **[TEMPLATE_README.md](TEMPLATE_README.md)** - Complete feature guide with all details
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Documentation standards and rules
 - **[SHARING_GUIDE.md](SHARING_GUIDE.md)** - How to share this template with colleagues
@@ -101,6 +102,7 @@ For complete information, see:
 
 - **[QUICK_START.md](QUICK_START.md)** - Get started in 5 minutes! ⚡
 - **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Step-by-step setup for new users
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Common issues and solutions 🔧
 - **[TEMPLATE_README.md](TEMPLATE_README.md)** - Complete feature guide with all details
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Documentation standards and rules
 - **[SHARING_GUIDE.md](SHARING_GUIDE.md)** - How to share this template with colleagues
