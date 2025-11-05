@@ -13,6 +13,35 @@ const projectsDir = path.join(__dirname, '../docs/projects');
 const sidebarPath = path.join(__dirname, '../sidebars.js');
 const dashboardPath = path.join(__dirname, '../docs/index.md');
 
+/**
+ * Normalize document ID to match Docusaurus's normalization
+ * Docusaurus strips leading numbers and special characters from document IDs
+ */
+function normalizeDocId(filename) {
+  // Remove .md extension
+  let id = filename.replace(/\.md$/, '');
+  
+  // Docusaurus normalizes IDs by removing leading numbers and some special chars
+  // For example: "1-create-a-project-spec" becomes "create-a-project-spec"
+  // Let's strip leading numbers and dashes
+  id = id.replace(/^[\d\.\s-]+/, '');
+  
+  // If the result is empty or just dashes, use the original
+  if (!id || id === '-' || id.match(/^-+$/)) {
+    id = filename.replace(/\.md$/, '');
+  }
+  
+  return id;
+}
+
+/**
+ * Get the actual document ID that Docusaurus will use
+ */
+function getDocusaurusDocId(filePath) {
+  const filename = path.basename(filePath);
+  return normalizeDocId(filename);
+}
+
 // Get all markdown files in projects directory
 function getProjectFiles() {
   if (!fs.existsSync(projectsDir)) {
@@ -21,8 +50,22 @@ function getProjectFiles() {
   
   const files = fs.readdirSync(projectsDir)
     .filter(file => file.endsWith('.md'))
-    .map(file => file.replace('.md', ''))
-    .filter(file => file !== 'project-template'); // Always exclude template
+    .filter(file => file !== 'project-template.md') // Always exclude template
+    .map(file => {
+      const filePath = path.join(projectsDir, file);
+      if (!fs.existsSync(filePath)) {
+        return null;
+      }
+      
+      // Get the actual doc ID that Docusaurus will use
+      const docId = getDocusaurusDocId(filePath);
+      return {
+        filename: file.replace('.md', ''),
+        docId: docId,
+        filePath: filePath
+      };
+    })
+    .filter(item => item !== null); // Remove null entries
   
   return files;
 }
@@ -71,7 +114,14 @@ function updateSidebar(projectFiles) {
   const sidebarContent = fs.readFileSync(sidebarPath, 'utf8');
   
   // Find the Projects category items array
-  const itemsStart = sidebarContent.indexOf("items: [");
+  // Look for "items: [" within the Projects category
+  const projectsCategoryStart = sidebarContent.indexOf("label: 'Projects'");
+  if (projectsCategoryStart === -1) {
+    console.error('Could not find Projects category in sidebars.js');
+    return false;
+  }
+  
+  const itemsStart = sidebarContent.indexOf("items: [", projectsCategoryStart);
   const itemsEnd = sidebarContent.indexOf("],", itemsStart);
   
   if (itemsStart === -1 || itemsEnd === -1) {
@@ -79,18 +129,55 @@ function updateSidebar(projectFiles) {
     return false;
   }
   
-  // Build new items array
-  let items = ["'projects/project-template',"];
-  
-  // Add all discovered projects (excluding sample-project if it exists, or include it)
-  const sortedProjects = projectFiles.sort();
-  sortedProjects.forEach(project => {
-    items.push(`        'projects/${project}',`);
+  // Build new items array with proper indentation
+  // Only include files that actually exist and are valid
+  // projectFiles is now an array of objects with {filename, docId, filePath}
+  const validProjects = projectFiles.filter(project => {
+    if (!fs.existsSync(project.filePath)) {
+      console.warn(`⚠️  Skipping ${project.filename}: file does not exist`);
+      return false;
+    }
+    // Verify file is readable and has content
+    try {
+      const stats = fs.statSync(project.filePath);
+      if (stats.size === 0) {
+        console.warn(`⚠️  Skipping ${project.filename}: file is empty`);
+        return false;
+      }
+    } catch (error) {
+      console.warn(`⚠️  Skipping ${project.filename}: ${error.message}`);
+      return false;
+    }
+    return true;
   });
   
-  // Always include sample-project at the end
-  if (!sortedProjects.includes('sample-project')) {
+  let items = [];
+  
+  // Always include project-template first if it exists
+  const templatePath = path.join(projectsDir, 'project-template.md');
+  if (fs.existsSync(templatePath)) {
+    items.push("        'projects/project-template',");
+  }
+  
+  // Add all discovered projects (sorted alphabetically by docId)
+  const sortedProjects = validProjects.sort((a, b) => a.docId.localeCompare(b.docId));
+  sortedProjects.forEach(project => {
+    // Skip template and sample-project (handled separately)
+    if (project.filename !== 'project-template' && project.filename !== 'sample-project') {
+      // Use the normalized docId that Docusaurus will recognize
+      items.push(`        'projects/${project.docId}',`);
+    }
+  });
+  
+  // Always include sample-project at the end if it exists
+  const sampleProjectPath = path.join(projectsDir, 'sample-project.md');
+  if (fs.existsSync(sampleProjectPath)) {
     items.push("        'projects/sample-project',");
+  }
+  
+  // If no items, add a comment
+  if (items.length === 0) {
+    items.push("        // No projects found");
   }
   
   const newItems = items.join('\n');
@@ -110,14 +197,14 @@ function updateDashboard(projectFiles) {
   let dashboardContent = fs.readFileSync(dashboardPath, 'utf8');
   
   // Extract project info for each file
+  // projectFiles is now an array of objects with {filename, docId, filePath}
   const projects = [];
-  for (const file of projectFiles) {
-    const filePath = path.join(projectsDir, `${file}.md`);
-    if (fs.existsSync(filePath)) {
-      const info = extractProjectInfo(filePath);
+  for (const project of projectFiles) {
+    if (fs.existsSync(project.filePath)) {
+      const info = extractProjectInfo(project.filePath);
       if (info && info.name) {
         projects.push({
-          file,
+          file: project.docId, // Use normalized docId for the link
           name: info.name,
           status: info.status || 'In Progress',
           progress: info.progress || '0%',
@@ -161,7 +248,8 @@ function main() {
   console.log('🔍 Auto-discovering projects...');
   
   const projectFiles = getProjectFiles();
-  console.log(`📁 Found ${projectFiles.length} project(s):`, projectFiles.join(', '));
+  const fileList = projectFiles.map(p => p.filename).join(', ');
+  console.log(`📁 Found ${projectFiles.length} project(s):`, fileList);
   
   if (projectFiles.length === 0) {
     console.log('ℹ️  No projects found. Use the template to create your first project.');
