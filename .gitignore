@@ -5,6 +5,11 @@ build/
 # Node modules
 node_modules/
 
+# Local project files (keep template and sample)
+docs/projects/*.md
+!docs/projects/project-template.md
+!docs/projects/sample-project.md
+
 # Python
 __pycache__/
 *.py[cod]
