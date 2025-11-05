@@ -4,24 +4,33 @@ A comprehensive Docusaurus-based documentation template for tracking multiple pr
 
 ## 🚀 Quick Start
 
-1. **Install dependencies:**
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/gagancodes99/master-docs.git
+   cd master-docs
+   ```
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. **Start development server:**
+3. **Start development server:**
    ```bash
    npm start
    ```
 
-3. **View documentation:**
+4. **View documentation:**
    - Open `http://localhost:3000` in your browser
 
 ## 📚 Documentation
 
-- **[TEMPLATE_README.md](TEMPLATE_README.md)** - Complete guide with features and usage
-- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Step-by-step setup instructions for new users
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Documentation standards and rules for contributors
+- **[QUICK_START.md](QUICK_START.md)** - Get started in 5 minutes! ⚡
+- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Step-by-step setup for new users
+- **[TEMPLATE_README.md](TEMPLATE_README.md)** - Complete feature guide with all details
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Documentation standards and rules
+- **[SHARING_GUIDE.md](SHARING_GUIDE.md)** - How to share this template with colleagues
+- **[TEMPLATE_INFO.md](TEMPLATE_INFO.md)** - Template customization guide
 
 ## ✨ Features
 
@@ -39,14 +48,47 @@ If you're setting this up for the first time, start with:
 2. [CONTRIBUTING.md](CONTRIBUTING.md) - Learn the documentation standards
 3. [TEMPLATE_README.md](TEMPLATE_README.md) - Understand all features
 
-## 📝 Adding Projects
+## 📝 Adding Your Projects
 
-1. Copy the template: `cp docs/projects/project-template.md docs/projects/your-project.md`
-2. Fill in project details
-3. Update `sidebars.js` to add your project
-4. Update `docs/index.md` dashboard table
+### Using Cursor/Claude Code
+
+1. **Clone this template:**
+   ```bash
+   git clone https://github.com/gagancodes99/master-docs.git
+   cd master-docs
+   npm install
+   ```
+
+2. **Use AI to document your projects:**
+   - Open Cursor or Claude Code
+   - Ask: "Explore my Desktop/Work folder and document all projects according to the template"
+   - The AI will automatically create project documentation files
+
+3. **Manual method:**
+   - Copy the template: `cp docs/projects/project-template.md docs/projects/your-project.md`
+   - Fill in project details
+   - Update `sidebars.js` and `docs/index.md`
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+## 🎨 Customization
+
+### Update Site Information
+
+Edit `docusaurus.config.js`:
+```javascript
+title: 'Your Team Documentation',
+tagline: 'Your team tagline',
+```
+
+### Update Colors
+
+Edit `src/css/custom.css`:
+```css
+:root {
+  --ifm-color-primary: #YOUR_COLOR;
+}
+```
 
 ## 📖 Full Documentation
 
@@ -75,6 +117,38 @@ npm run build
 ### Deployment
 See [TEMPLATE_README.md](TEMPLATE_README.md#deployment) for deployment options.
 
+## 🤖 AI-Assisted Documentation
+
+This template is designed to work with AI coding assistants like Cursor or Claude Code. You can:
+
+1. Clone the template
+2. Ask the AI: "Explore my projects folder and create documentation for all projects"
+3. The AI will automatically:
+   - List all projects
+   - Create documentation files using the template
+   - Add progress bars
+   - Update the dashboard and sidebar
+
+## 📋 What's Included
+
+- ✅ Project dashboard with overview
+- ✅ Visual progress bars
+- ✅ Milestone tracking
+- ✅ Search functionality
+- ✅ Dark mode support
+- ✅ Complete documentation
+- ✅ Ready-to-use template
+
+## 🔄 Workflow
+
+1. **Clone the template** → `git clone https://github.com/gagancodes99/master-docs.git`
+2. **Install dependencies** → `npm install`
+3. **Document your projects** → Use AI or manually add projects
+4. **Track progress** → Update progress bars regularly
+5. **Share with team** → Deploy or share locally
+
 ---
 
 **Happy documenting!** 📚
+
+For questions, see the documentation files or refer to [Docusaurus docs](https://docusaurus.io/docs).
